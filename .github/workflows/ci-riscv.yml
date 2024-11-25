@@ -13,7 +13,7 @@ jobs:
   checkinstall:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 2
     - name: Install APT Dependencies
@@ -28,7 +28,7 @@ jobs:
   formatting:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 2
     - name: Install pcre2grep
@@ -101,7 +101,7 @@ jobs:
           distro: ubuntu-22.04
     runs-on: ${{ matrix.distro }}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
     - run: sudo apt-get update

@@ -17,7 +17,7 @@ jobs:
   checkinstall:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 2
     - name: Install APT Dependencies
@@ -32,7 +32,7 @@ jobs:
   formatting:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 2
     - name: Install pcre2grep
@@ -107,7 +107,7 @@ jobs:
       CXXFLAGS: -Wall -Wextra -Werror ${{ matrix.isax }}
       INTEL_TARGET: ${{ matrix.target }}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
     - name: CPU Information
@@ -152,7 +152,7 @@ jobs:
           - "32"
           - "64"
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
     - name: CPU Information
@@ -190,7 +190,7 @@ jobs:
       CFLAGS: -DSIMDE_ENABLE_NATIVE_ALIASES -DSIMDE_NATIVE_ALIASES_TESTING -Wall -Wextra -Werror
       CXXFLAGS: -DSIMDE_ENABLE_NATIVE_ALIASES -DSIMDE_NATIVE_ALIASES_TESTING -Wall -Wextra -Werror
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
     - name: CPU Information
@@ -221,7 +221,7 @@ jobs:
       CFLAGS: -march=native -Wall -Wextra -Werror
       CXXFLAGS: -march=native -Wall -Wextra -Werror
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
     - run: sudo apt-get update
@@ -285,7 +285,7 @@ jobs:
       CFLAGS: ${{ matrix.arch_flags }} -Wall -Wextra -Werror
       CXXFLAGS: ${{ matrix.arch_flags }} -Wall -Wextra -Werror
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
     - name: CPU Information
@@ -359,7 +359,7 @@ jobs:
           distro: ubuntu-22.04
     runs-on: ${{ matrix.distro }}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
     - run: sudo apt-get update
@@ -427,7 +427,7 @@ jobs:
           distro: ubuntu-22.04
     runs-on: ${{ matrix.distro }}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
     - run: sudo apt-get update
@@ -515,7 +515,7 @@ jobs:
       CFLAGS: ${{ matrix.arch_flags }} -Wall -Weverything -Werror -fno-lax-vector-conversions
       CXXFLAGS: ${{ matrix.arch_flags }} -Wall -Weverything -Werror -fno-lax-vector-conversions
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
     - name: CPU Information
@@ -574,7 +574,7 @@ jobs:
     env:
       DEVELOPER_DIR:  /Applications/Xcode_${{ matrix.xcode }}.app
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
     # - name: System Information
@@ -612,7 +612,7 @@ jobs:
       CFLAGS: -Wall -Werror -march=native -fp-model precise
       CXXFLAGS: -Wall -Werror -march=native -fp-model precise
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: CPU Information
       run: cat /proc/cpuinfo
     - name: Install APT Dependencies
@@ -646,7 +646,7 @@ jobs:
       CXXFLAGS: /WX /Z7
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: recursive
       - name: Install Meson, Ninja and coverage
@@ -665,7 +665,7 @@ jobs:
   linux-gcc-loongarch64:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: CPU Information
       run: cat /proc/cpuinfo
     - name: Install APT Dependencies
